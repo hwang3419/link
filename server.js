@@ -4,8 +4,10 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 server = require('http').createServer(app);
-server.listen(PORT, IPADDRESS);
-
+//server.listen(PORT, IPADDRESS);
+http.listen(PORT, function(){
+  console.log('listening on *:80');
+});
 
 app.get('/', function(req, res){
   res.sendfile('index.html');
