@@ -11,8 +11,8 @@ app.use(express.static('public'));
 //app.use(connect.logger());
 
 // Start the server
-var port = process.env.OPENSHIFT_INTERNAL_PORT || 8000
-    , ip = process.env.OPENSHIFT_INTERNAL_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8000  
+var ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 server.listen(port, ip);
 
 
